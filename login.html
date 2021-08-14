@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+	<title>login</title>
+
+	<link rel="stylesheet" href="stlye.css">
+
+	<style>body{
+ 	background-color:#39A6A3; color:white;
+	}	
+	</style>
+	
+	<script>
+	function signupClk(){
+		document.getElementById("signupClick").onclick = function () {
+       	 	location.href = "signup.html";
+    	};
+	}
+	
+	function loginClk(){
+		document.getElementById("loginClick").onclick = function () {
+       	 	location.href = "createAccount.html";
+    	};
+	}
+	</script>
+	
+</head>
+
+	<body>
+	<center>
+		<br><br><h1>Welcome to</h1>
+		<h2 style="color:black;">Agora</h2><br><br>
+	
+		<button id="signupClick" style=" background-color:white; color:#39A6A3; width:30%;" onclick="signupClk()">Sign Up</a></button><br><br>
+	
+		<button id="loginClick" style="background-color:white; color:#39A6A3; width:30%;" onclick="loginClk()">Sign In</button><br><br>
+	
+	
+		</center>
+	</body>
+
+</html>

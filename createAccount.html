@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create Account</title>
+<link rel="stylesheet" href="style.css">
+
+	
+	<style>body{
+	background-color:#DEEEEA;
+	color:#39A6A3;}
+	</style>
+	
+	<script>
+			function validate()
+			{
+				var name=document.myform.name.value;
+				var password=document.myform.password.value;
+				var x=document.myform.email.value;
+				var atPosition=x.indexOf("@");
+				var dotPosition=x.lastIndexOf(".");
+				if(name=="")
+				{
+					document.getElementById("res").innerHTML="Name can't be blank.";
+					return false;
+				}
+				else if(password.length<6 || password.length>10)
+				{
+					document.getElementById("res").innerHTML="Password must be at least 6 characters and at most 10 characters long.";
+					return false;
+				}
+				
+				else if(atPosition<1 || atPosition+2>dotPosition || dotPosition+2>=x.length)
+				{
+					document.getElementById("res").innerHTML="Please enter a validate email id....\n atPosition: "+atPosition+"\ndotPosition: "+dotPosition;
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+		</script>
+	
+</head>
+<body>
+
+	<center>
+	<h1>Create Account</h1><br>
+	<h2>Hello, Friends! </h2>
+	<p>Enter your personal details<br>and starts journey with us.</p><br><br><br>
+<form name="myform" method="post" action="acc" onsubmit="return validate()">
+	<input type="text" name="name" class="input top" placeholder="Name"><br>
+	
+   	<input type="email" name="email" class="input middle" placeholder="Email"><br>
+    
+	<input type="password" name="password" class="input bottom" placeholder="Password"><br><br>
+	
+
+   	<button class="btn" type="submit">Sign Me Up</button>
+   	
+   	<p id="res" style="color:red;"></p>
+</form>
+<br><br><a href='login.html'>BACK</a>
+	</center>
+
+</body>
+</html>
